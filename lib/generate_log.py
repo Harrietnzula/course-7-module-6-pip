@@ -9,11 +9,7 @@ def generate_log(entries):
     filename = f"log_{today}.txt"
     
     with open(filename, "w") as file:
-        for i, entry in enumerate(entries):
-            if i < len(entries) - 1:
-                file.write(entry + "\n")
-            else:
-                file.write(entry)
+        file.write("\n".join(entries))
     
     print(f"Log file created: {filename}")
     return filename
